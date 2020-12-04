@@ -22,6 +22,30 @@ fn main() {
                 break;
             }
         }
+
+        println!("-- Part Two");
+        let values_count: usize = values.len();
+        let mut done = false;
+        for i in 0..values_count {
+            let x = values[i];
+            for j in (i + 1)..values_count {
+                let y = values[j];
+                for k in (j + 1)..values_count {
+                    let z = values[k];
+                    if (x + y + z) == 2020 {
+                        println!("{}", x * y * z);
+                        done = true;
+                        break;
+                    }
+                }
+                if done {
+                    break;
+                }
+            }
+            if done {
+                break;
+            }
+        }
     }
 }
 
